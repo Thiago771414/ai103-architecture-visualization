@@ -7,11 +7,14 @@
   <meta name="description" content="Atlas técnico interativo da Microsoft AI-103: diagramas de arquitetura e percursos operacionais para estudar os 17 guias dos cinco domínios." />
   <meta property="og:title" content="Atlas AI-103 | Engenharia de Sistemas Inteligentes" />
   <meta property="og:description" content="Aprenda os cinco domínios da AI-103 explorando esquemas, componentes e fluxos passo a passo." />
-  <title>Atlas AI-103 — Engenharia de Sistemas Inteligentes</title>
+  <title>Atlas AI-103 v2 — Engenharia de Sistemas Inteligentes</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/simulator.css" />
   <script src="assets/data.js" defer></script>
   <script src="assets/app.js" defer></script>
+  <script src="assets/simulator-data.js" defer></script>
+  <script src="assets/simulator.js" defer></script>
 </head>
 <body>
   <a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
@@ -21,8 +24,8 @@
       <span>ATLAS<span class="brand-dot">.</span><strong>AI-103</strong></span>
     </a>
     <div class="header-actions">
-      <span class="header-meta"><span class="pulse-dot"></span> MANUAL INTERATIVO · v1.0</span>
-      <a class="header-link" href="#integracao">Sistema integrado <span aria-hidden="true">↗</span></a>
+      <span class="header-meta"><span class="pulse-dot"></span> MANUAL INTERATIVO · v2.0</span>
+      <a class="header-link" href="#simulador">Bancada de agentes <span aria-hidden="true">↗</span></a>
       <button class="icon-button" id="btn-print" type="button" aria-label="Imprimir ou salvar em PDF" title="Imprimir ou salvar em PDF">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6zM18 12h.01"/></svg>
       </button>
@@ -51,13 +54,14 @@
           <h1 id="hero-title">Aprenda IA como quem <em>desmonta uma locomotiva.</em></h1>
           <p>Uma planta mostra as peças. Um esquema mostra o funcionamento. Este atlas faz os dois: transforme os <strong>17 guias da Microsoft AI-103</strong> em arquiteturas que você consegue inspecionar e executar, etapa por etapa.</p>
           <div class="hero-actions">
-            <a class="button primary" href="#dominio-1">Explorar os circuitos <span aria-hidden="true">↘</span></a>
+            <a class="button primary" href="#simulador">Montar um agente <span aria-hidden="true">↘</span></a>
+            <a class="button ghost" href="#dominio-1">Explorar os circuitos →</a>
             <a class="button ghost" href="#metodo">Como estudar <span aria-hidden="true">→</span></a>
           </div>
           <div class="hero-stats" aria-label="Conteúdo do atlas">
             <span><strong>05</strong><small>DOMÍNIOS</small></span>
             <span><strong>17</strong><small>GUIAS</small></span>
-            <span><strong>02</strong><small>VISÕES POR DOMÍNIO</small></span>
+            <span><strong>03</strong><small>SIMULAÇÕES DE AGENTES</small></span>
           </div>
         </div>
         <div class="hero-drawing" aria-hidden="true">
@@ -103,15 +107,37 @@
         </div>
       </section>
 
+      <section id="simulador" class="simulator-section" aria-labelledby="simulator-title">
+        <div class="section-label"><span>07</span> NOVO · V2.0 / LABORATÓRIO DE ENGENHARIA</div>
+        <div class="sim-titleline"><h2 id="simulator-title">Monte o agente. <em>Descubra o custo das escolhas.</em></h2><p>Três problemas fictícios. Seis decisões por caso, usando os cinco domínios da AI-103 e controles transversais. Você monta o circuito, executa a bancada e compara sua arquitetura com uma proposta de referência.</p></div>
+        <div class="sim-hintbar"><strong>[ ! ] REGRA DO LABORATÓRIO</strong><span>Não há um modelo universalmente melhor. Custo, latência, risco e manutenção mudam conforme os requisitos. A bancada compara estratégias, não realiza inferência real na nuvem.</span></div>
+        <nav class="sim-case-nav" id="simulator-case-nav" aria-label="Escolher problema de arquitetura"></nav>
+        <div class="sim-overview" id="simulator-overview"></div>
+        <div id="simulator-ui">
+          <div class="sim-buildgrid">
+            <div>
+              <div class="sim-buildhead"><h3>01 / Selecione as peças</h3><span>6 CAMADAS DA ARQUITETURA</span></div>
+              <div id="simulator-decisions"></div>
+            </div>
+            <aside class="sim-boardbox" aria-label="Planta de montagem da sua arquitetura">
+              <div id="simulator-board"></div>
+              <div class="sim-board-actions"><span class="sim-micro">STATUS DA MONTAGEM</span><div class="sim-progress-track" aria-hidden="true"><span id="sim-progress"></span></div><p id="sim-remaining" aria-live="polite">0 das 6 decisões selecionadas</p><button id="sim-run" class="sim-cta" type="button" disabled>Escolha as seis camadas</button></div>
+            </aside>
+          </div>
+          <div id="simulator-runpanel" class="sim-runpanel" hidden aria-live="polite"></div>
+          <div id="simulator-result" class="sim-report" hidden aria-live="polite"></div>
+        </div>
+      </section>
+
       <section class="glossary-section" id="glossario">
-        <div class="section-label"><span>07</span> FICHA DE OFICINA</div>
+        <div class="section-label"><span>08</span> FICHA DE OFICINA</div>
         <div class="glossary-header"><h2>17 guias. <em>Uma visão conectada.</em></h2><p>Use a busca para localizar termos e conceitos nos guias. A pesquisa é local, sem enviar dados a nenhum servidor.</p></div>
         <div class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input id="guide-search" type="search" autocomplete="off" placeholder="Buscar: MCP, RAG, OCR, Voice Live, RRF..." aria-label="Buscar nos 17 guias"/><span id="search-count" aria-live="polite">17 guias</span></div>
         <div id="all-guides" class="guide-directory"></div>
       </section>
 
       <footer class="footer">
-        <div><span class="footer-brand">ATLAS<span>·</span>AI-103</span><p>Um manual didático de arquiteturas inteligentes, inspirado em desenhos técnicos e esquemas de funcionamento. Projeto educacional independente.</p></div>
+        <div><span class="footer-brand">ATLAS<span>·</span>AI-103</span><p>Um manual e simulador didático de arquiteturas inteligentes, inspirado em desenhos técnicos. Projeto educacional independente.</p></div>
         <div><p><strong>SEM FRAMEWORK · SEM BACKEND</strong></p><p>HTML + CSS + JavaScript · Compatível com GitHub Pages</p><p>Conteúdo dos 17 guias de estudo apresentados nesta conversa. Consulte a documentação atual da Microsoft para limites e recursos sujeitos a alterações.</p></div>
         <a href="#inicio" class="back-top">Voltar ao início ↑</a>
       </footer>

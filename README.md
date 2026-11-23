@@ -1,6 +1,22 @@
 # Atlas AI-103 — Engenharia de Sistemas Inteligentes
 
-Site estático e interativo para estudar os **cinco domínios e 17 guias da Microsoft AI-103**, combinando a linguagem dos diagramas mecânicos com arquitetura de software e agentes de IA.
+Site estático e interativo para estudar os **cinco domínios e 17 guias da Microsoft AI-103**, combinando desenhos técnicos de locomotivas, arquitetura de software e **simulações de projeto de agentes**. Esta é a **versão 2.0**; mantém os recursos da v1 e adiciona a Bancada de Arquitetura.
+
+## Novidade na versão 2.0 — Bancada de Arquitetura
+
+No endereço `#simulador`, escolha uma de **3 situações fictícias**:
+
+1. **Contratos, voz e reembolsos** — PDFs variados, consultas auditáveis, áudio gravado e autorização de pagamentos.
+2. **Sinistros com fotos e conversa ao vivo** — imagens, vídeo, Voice Live, picos de demanda e avaliação humana.
+3. **Oficina de freios pneumáticos** — esquemas ferroviários, jargão de manutenção, busca em manuais e limites de segurança física.
+
+Para cada cenário, escolha **6 camadas**: planejamento/implantação (D1), agentes (D2), visão (D3), texto e fala (D4), busca e extração (D5), segurança e governança transversal. São **18 decisões e 54 alternativas técnicas**.
+
+**Como funciona:** escolha os componentes → observe a planta SVG atualizar → clique **Executar bancada** → percorra as seis etapas → receba um **laudo individualizado** com uma das três classificações (**econômico e frágil**, **superdimensionado**, **adequado**), comparando cada escolha com a arquitetura recomendada para aquele problema. O laudo pode ser copiado em Markdown.
+
+**Limites:** são casos fictícios e heurísticas pedagógicas. As faixas qualitativas de custo, latência, esforço e risco **não são medições ou cotações do Azure**, não reproduzem preços atuais e não substituem benchmarks, avaliação de segurança ou testes em ambiente real. O código não chama serviços Azure.
+
+As seleções ficam registradas em `localStorage` no próprio navegador, por caso, sem conta e sem transmissão de dados.
 
 ## O que inclui
 
@@ -9,6 +25,7 @@ Site estático e interativo para estudar os **cinco domínios e 17 guias da Micr
 - **1 sistema integrado** com dez etapas combinando os cinco domínios.
 - **17 fichas de revisão**, organizadas nos domínios 4 + 4 + 3 + 3 + 3.
 - **5 checkpoints** com correção imediata.
+- **3 bancadas práticas com 6 decisões cada**, circuito de execução e diagnóstico comparativo.
 - **Perguntas de arquitetura**, busca local, exportação de cada planta para SVG e progresso salvo no navegador.
 - Interface responsiva e recursos de acessibilidade, incluindo navegação por teclado e suporte a redução de movimento.
 
@@ -25,7 +42,10 @@ ai103-atlas-github-pages/
     ├── favicon.svg
     ├── styles.css
     ├── data.js
-    └── app.js
+    ├── app.js
+    ├── simulator.css
+    ├── simulator-data.js
+    └── simulator.js
 ```
 
 ## Publicação no GitHub Pages — pelo navegador
@@ -91,3 +111,25 @@ Pesos de domínio usados conforme o material do curso: 25–30%, 30–35%, 10–
 ## Licença de uso
 
 Você pode copiar, editar e publicar o site em seu repositório. Mantenha os avisos sobre o caráter educacional e a necessidade de conferir documentação atualizada.
+
+## Atualizar o repositório GitHub Pages já existente
+
+O nome do repositório não precisa mudar: `ai103-architecture-visualization`.
+
+1. Extraia `atlas-ai103-v2-github-pages.zip` numa **nova pasta temporária**.
+2. Copie o **conteúdo** dessa pasta (incluindo `assets/`, `index.html`, `README.md` e `.nojekyll`) por cima dos arquivos da pasta local que você já usa com Git, como `Downloads\atlas-ai103-github-pages`. **Não remova a pasta `.git`** do repositório local.
+3. Abra o PowerShell **na pasta Git já existente** e execute:
+
+```powershell
+git status
+git add -A
+git commit -m "feat: add interactive AI-103 agent architecture simulator v2"
+git push origin main
+```
+
+4. Depois do deploy do GitHub Pages, abra `https://thiago771414.github.io/ai103-architecture-visualization/#simulador`. O mesmo link principal e os diagramas da v1 continuarão funcionando.
+
+## Evolução
+
+- **v1.0**: cinco plantas, cinco circuitos, 17 guias e sistema integrado.
+- **v2.0**: três casos práticos, decisões de arquitetura, diagrama dinâmico, execução e laudo comparativo.
