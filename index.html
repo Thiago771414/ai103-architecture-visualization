@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#071522" />
+  <meta name="description" content="Atlas técnico interativo da Microsoft AI-103: diagramas de arquitetura e percursos operacionais para estudar os 17 guias dos cinco domínios." />
+  <meta property="og:title" content="Atlas AI-103 | Engenharia de Sistemas Inteligentes" />
+  <meta property="og:description" content="Aprenda os cinco domínios da AI-103 explorando esquemas, componentes e fluxos passo a passo." />
+  <title>Atlas AI-103 — Engenharia de Sistemas Inteligentes</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/data.js" defer></script>
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+  <a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
+  <header class="global-header">
+    <a class="wordmark" href="#inicio" aria-label="Atlas AI-103, voltar ao início">
+      <span class="wordmark-sign" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M3 16h6l4-8 6 16 4-8h6"/><circle cx="4" cy="16" r="2"/><circle cx="28" cy="16" r="2"/></svg></span>
+      <span>ATLAS<span class="brand-dot">.</span><strong>AI-103</strong></span>
+    </a>
+    <div class="header-actions">
+      <span class="header-meta"><span class="pulse-dot"></span> MANUAL INTERATIVO · v1.0</span>
+      <a class="header-link" href="#integracao">Sistema integrado <span aria-hidden="true">↗</span></a>
+      <button class="icon-button" id="btn-print" type="button" aria-label="Imprimir ou salvar em PDF" title="Imprimir ou salvar em PDF">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6zM18 12h.01"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="shell">
+    <aside class="sidebar" aria-label="Navegação por domínios">
+      <div class="sidebar-inner">
+        <p class="overline">ÍNDICE DE SISTEMAS</p>
+        <nav class="side-nav" id="side-nav" aria-label="Domínios AI-103"></nav>
+        <div class="sidebar-bottom">
+          <span class="overline">SEU CADERNO DE REVISÃO</span>
+          <div class="progress-big"><strong id="progress-number">0</strong><span>/ 17 guias</span></div>
+          <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+          <p>Marque os guias revisados. O progresso fica salvo <strong>neste navegador</strong>, sem conta.</p>
+          <button type="button" class="reset-link" id="btn-reset">Zerar marcações <span aria-hidden="true">↺</span></button>
+        </div>
+      </div>
+    </aside>
+
+    <main id="conteudo">
+      <section id="inicio" class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> ENGENHARIA DE SISTEMAS INTELIGENTES</div>
+          <h1 id="hero-title">Aprenda IA como quem <em>desmonta uma locomotiva.</em></h1>
+          <p>Uma planta mostra as peças. Um esquema mostra o funcionamento. Este atlas faz os dois: transforme os <strong>17 guias da Microsoft AI-103</strong> em arquiteturas que você consegue inspecionar e executar, etapa por etapa.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#dominio-1">Explorar os circuitos <span aria-hidden="true">↘</span></a>
+            <a class="button ghost" href="#metodo">Como estudar <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="hero-stats" aria-label="Conteúdo do atlas">
+            <span><strong>05</strong><small>DOMÍNIOS</small></span>
+            <span><strong>17</strong><small>GUIAS</small></span>
+            <span><strong>02</strong><small>VISÕES POR DOMÍNIO</small></span>
+          </div>
+        </div>
+        <div class="hero-drawing" aria-hidden="true">
+          <div class="drawing-head"><span>PLANTA GERAL / AI-103</span><span>REV. A — 2026</span></div>
+          <svg class="hero-schematic" viewBox="0 0 560 390" role="img">
+            <defs><marker id="hero-tip" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#39dcc9"/></marker></defs>
+            <g class="schem-lines" stroke="#36d6c2" stroke-width="1.8" fill="none" marker-end="url(#hero-tip)">
+              <path d="M153 82H212V169H270"/><path d="M153 280H212V203H270"/><path d="M405 184H466V105"/><path d="M405 184H466V277"/>
+              <path d="M339 128V70H466" stroke-dasharray="5 5"/><path d="M339 246V319H466" stroke-dasharray="5 5"/>
+            </g>
+            <g class="hero-diagram-node"><rect x="30" y="38" width="124" height="86" rx="4"/><text x="47" y="63" class="tiny">INPUT / 01</text><text x="47" y="88">DOCUMENTOS</text><text x="47" y="107" class="tiny">texto · áudio · vídeo</text></g>
+            <g class="hero-diagram-node"><rect x="30" y="242" width="124" height="86" rx="4"/><text x="47" y="267" class="tiny">INPUT / 02</text><text x="47" y="292">USUÁRIO</text><text x="47" y="311" class="tiny">prompt · consulta</text></g>
+            <g class="hero-diagram-node core"><rect x="268" y="127" width="139" height="118" rx="4"/><text x="284" y="153" class="tiny">CENTRO DE CONTROLE</text><text x="284" y="181">FOUNDRY</text><text x="284" y="204">AGENT</text><text x="284" y="225" class="tiny">modelo · ferramentas</text></g>
+            <g class="hero-diagram-node"><rect x="465" y="68" width="78" height="72" rx="3"/><text x="477" y="91" class="tiny">OUT / 01</text><text x="477" y="115">RAG</text></g>
+            <g class="hero-diagram-node"><rect x="465" y="240" width="78" height="72" rx="3"/><text x="477" y="263" class="tiny">OUT / 02</text><text x="477" y="285">AÇÃO</text></g>
+            <g class="hero-numbers"><text x="24" y="374">PLANO SISTÊMICO · NÍVEL 0</text><text x="406" y="374">NÃO EM ESCALA</text></g>
+            <g fill="#3bdfcc"><circle cx="212" cy="169" r="4"/><circle cx="212" cy="203" r="4"/><circle cx="466" cy="105" r="4"/><circle cx="466" cy="277" r="4"/></g>
+          </svg>
+          <div class="drawing-foot"><span>LINHAS = INFORMAÇÃO / CONTROLE</span><span>FIG. 00.01</span></div>
+        </div>
+      </section>
+
+      <section class="method-section" id="metodo" aria-labelledby="method-title">
+        <div class="section-label"><span>00</span> PROTOCOLO DE LEITURA</div>
+        <div class="method-top"><h2 id="method-title">Do desenho estático ao <em>sistema em movimento.</em></h2><p>Como um manual de locomotiva, cada domínio é mostrado de duas formas complementares. Você controla a inspeção: clique em um componente e avance pelas etapas da operação.</p></div>
+        <div class="method-grid">
+          <article class="method-card"><span class="method-icon">▦</span><h3>01 / Planta estrutural</h3><p>Identifique os componentes, as interfaces, as dependências e a responsabilidade de cada peça. Clique nos módulos para examiná-los.</p></article>
+          <article class="method-card"><span class="method-icon">↳</span><h3>02 / Circuito operacional</h3><p>Simule a execução real: entrada, decisão, ferramenta, retorno e validação. Avance passo a passo, como no esquema de frenagem.</p></article>
+          <article class="method-card"><span class="method-icon">?</span><h3>03 / Diagnóstico técnico</h3><p>Consulte os 17 guias, resolva um checkpoint por domínio e reflita sobre a pergunta de projeto. Marque o que revisou.</p></article>
+        </div>
+        <div class="legend"><span class="legend-title">LEGENDA TÉCNICA</span><span><i class="legend-line solid"></i> conexão / serviço</span><span><i class="legend-line dashed"></i> dependência ou evidência</span><span><i class="legend-dot"></i> componente selecionável</span><span><i class="legend-bracket">[ ! ]</i> falha a observar</span></div>
+      </section>
+
+      <div id="chapters" aria-label="Cinco domínios e seus circuitos"></div>
+
+      <section id="integracao" class="integration-section" aria-labelledby="integration-title">
+        <div class="section-label"><span>06</span> ENSAIO FINAL · VISÃO COMPLETA</div>
+        <div class="integration-header"><div><span class="tag">CASO DE ENGENHARIA · PONTA A PONTA</span><h2 id="integration-title">Uma única operação.<br><em>Cinco domínios conectados.</em></h2></div><p>O desafio final dos guias: receber um contrato e uma pergunta por voz, extrair dados, recuperar políticas e responder com segurança, fontes e rastreamento.</p></div>
+        <div id="integration-visual"></div>
+        <div class="answer-panel">
+          <div><span class="overline">PERGUNTA CENTRAL</span><h3>Quem faz o quê nessa arquitetura?</h3><p>Como dividir Content Understanding, Document Intelligence, Azure AI Search, Foundry IQ, Agent Framework, Voice Live e os controles de segurança e observabilidade, sem duplicar responsabilidades?</p></div>
+          <details class="solution-details"><summary>Revelar proposta de engenharia <span aria-hidden="true">+</span></summary><div class="solution-copy" id="integrated-answer"></div></details>
+        </div>
+      </section>
+
+      <section class="glossary-section" id="glossario">
+        <div class="section-label"><span>07</span> FICHA DE OFICINA</div>
+        <div class="glossary-header"><h2>17 guias. <em>Uma visão conectada.</em></h2><p>Use a busca para localizar termos e conceitos nos guias. A pesquisa é local, sem enviar dados a nenhum servidor.</p></div>
+        <div class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input id="guide-search" type="search" autocomplete="off" placeholder="Buscar: MCP, RAG, OCR, Voice Live, RRF..." aria-label="Buscar nos 17 guias"/><span id="search-count" aria-live="polite">17 guias</span></div>
+        <div id="all-guides" class="guide-directory"></div>
+      </section>
+
+      <footer class="footer">
+        <div><span class="footer-brand">ATLAS<span>·</span>AI-103</span><p>Um manual didático de arquiteturas inteligentes, inspirado em desenhos técnicos e esquemas de funcionamento. Projeto educacional independente.</p></div>
+        <div><p><strong>SEM FRAMEWORK · SEM BACKEND</strong></p><p>HTML + CSS + JavaScript · Compatível com GitHub Pages</p><p>Conteúdo dos 17 guias de estudo apresentados nesta conversa. Consulte a documentação atual da Microsoft para limites e recursos sujeitos a alterações.</p></div>
+        <a href="#inicio" class="back-top">Voltar ao início ↑</a>
+      </footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
