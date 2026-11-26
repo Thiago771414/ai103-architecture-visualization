@@ -7,14 +7,17 @@
   <meta name="description" content="Atlas técnico interativo da Microsoft AI-103: diagramas de arquitetura e percursos operacionais para estudar os 17 guias dos cinco domínios." />
   <meta property="og:title" content="Atlas AI-103 | Engenharia de Sistemas Inteligentes" />
   <meta property="og:description" content="Aprenda os cinco domínios da AI-103 explorando esquemas, componentes e fluxos passo a passo." />
-  <title>Atlas AI-103 v2 — Engenharia de Sistemas Inteligentes</title>
+  <title>Atlas AI-103 v3 — Engenharia de Sistemas Inteligentes</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="assets/styles.css" />
   <link rel="stylesheet" href="assets/simulator.css" />
+  <link rel="stylesheet" href="assets/patterns.css" />
+  <script src="assets/patterns-data.js" defer></script>
   <script src="assets/data.js" defer></script>
   <script src="assets/app.js" defer></script>
   <script src="assets/simulator-data.js" defer></script>
   <script src="assets/simulator.js" defer></script>
+  <script src="assets/patterns.js" defer></script>
 </head>
 <body>
   <a href="#conteudo" class="skip-link">Pular para o conteúdo principal</a>
@@ -24,7 +27,8 @@
       <span>ATLAS<span class="brand-dot">.</span><strong>AI-103</strong></span>
     </a>
     <div class="header-actions">
-      <span class="header-meta"><span class="pulse-dot"></span> MANUAL INTERATIVO · v2.0</span>
+      <span class="header-meta"><span class="pulse-dot"></span> MANUAL INTERATIVO · v3.0</span>
+      <a class="header-link" href="#evolucao">Evolução &amp; GoF <span aria-hidden="true">↗</span></a>
       <a class="header-link" href="#simulador">Bancada de agentes <span aria-hidden="true">↗</span></a>
       <button class="icon-button" id="btn-print" type="button" aria-label="Imprimir ou salvar em PDF" title="Imprimir ou salvar em PDF">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6zM18 12h.01"/></svg>
@@ -56,16 +60,17 @@
           <div class="hero-actions">
             <a class="button primary" href="#simulador">Montar um agente <span aria-hidden="true">↘</span></a>
             <a class="button ghost" href="#dominio-1">Explorar os circuitos →</a>
-            <a class="button ghost" href="#metodo">Como estudar <span aria-hidden="true">→</span></a>
+            <a class="button ghost" href="#evolucao">História &amp; padrões GoF <span aria-hidden="true">→</span></a>
           </div>
           <div class="hero-stats" aria-label="Conteúdo do atlas">
             <span><strong>05</strong><small>DOMÍNIOS</small></span>
             <span><strong>17</strong><small>GUIAS</small></span>
-            <span><strong>03</strong><small>SIMULAÇÕES DE AGENTES</small></span>
+            <span><strong>03</strong><small>SIMULAÇÕES</small></span>
+            <span><strong>10</strong><small>PADRÕES GOF</small></span>
           </div>
         </div>
         <div class="hero-drawing" aria-hidden="true">
-          <div class="drawing-head"><span>PLANTA GERAL / AI-103</span><span>REV. A — 2026</span></div>
+          <div class="drawing-head"><span>PLANTA GERAL / AI-103</span><span>REV. C — 2026</span></div>
           <svg class="hero-schematic" viewBox="0 0 560 390" role="img">
             <defs><marker id="hero-tip" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#39dcc9"/></marker></defs>
             <g class="schem-lines" stroke="#36d6c2" stroke-width="1.8" fill="none" marker-end="url(#hero-tip)">
@@ -108,7 +113,7 @@
       </section>
 
       <section id="simulador" class="simulator-section" aria-labelledby="simulator-title">
-        <div class="section-label"><span>07</span> NOVO · V2.0 / LABORATÓRIO DE ENGENHARIA</div>
+        <div class="section-label"><span>07</span> V2.0 / LABORATÓRIO DE ENGENHARIA</div>
         <div class="sim-titleline"><h2 id="simulator-title">Monte o agente. <em>Descubra o custo das escolhas.</em></h2><p>Três problemas fictícios. Seis decisões por caso, usando os cinco domínios da AI-103 e controles transversais. Você monta o circuito, executa a bancada e compara sua arquitetura com uma proposta de referência.</p></div>
         <div class="sim-hintbar"><strong>[ ! ] REGRA DO LABORATÓRIO</strong><span>Não há um modelo universalmente melhor. Custo, latência, risco e manutenção mudam conforme os requisitos. A bancada compara estratégias, não realiza inferência real na nuvem.</span></div>
         <nav class="sim-case-nav" id="simulator-case-nav" aria-label="Escolher problema de arquitetura"></nav>
@@ -129,8 +134,40 @@
         </div>
       </section>
 
+      <section id="evolucao" class="evolution-section" aria-labelledby="evo-title">
+        <div class="section-label"><span>08</span> V3.0 / FUNDAMENTOS HISTÓRICOS E PADRÕES</div>
+        <div class="evo-hero">
+          <div><p class="evo-kicker">FROM MECHANICAL LOGIC TO AGENTIC INTELLIGENCE</p><h2 id="evo-title">Da lógica mecânica à <em>inteligência agêntica.</em></h2><p>Uma válvula, um circuito lógico, um objeto e um agente não são a mesma coisa. Mas todos podem ocupar um papel em um sistema com interfaces, dependências, fluxos e controles. Explore onde a lógica de uma tarefa é representada — e quem decide o próximo passo.</p><a href="#padroes" class="button primary">Abrir laboratório GoF ↓</a></div>
+          <div class="evo-map"><span class="evo-micro">PLANTA CONCEITUAL / 05 CAMADAS</span><div id="evo-map"></div><small>Modelo de abstração didático, não uma cronologia linear nem uma genealogia direta.</small></div>
+        </div>
+        <div class="evo-blockhead"><h3>01 / Percurso histórico</h3><span class="evo-micro">SELECIONE UMA ESTAÇÃO</span></div>
+        <div id="evo-stations" class="evo-stations" role="group" aria-label="Estações históricas"></div>
+        <article id="evo-station" class="evo-station" aria-live="polite"></article>
+        <div class="evo-foundation"><div><span class="evo-micro">BASE CIENTÍFICA · NÃO É EQUIVALÊNCIA FÍSICA</span><h3>Relações antes de componentes.</h3><p>A teoria do mapeamento estrutural de Dedre Gentner (1983) oferece uma base para transferir relações de um domínio conhecido a outro. A engenharia de sistemas acrescenta requisitos, interfaces, verificação e trade-offs. Aqui, as associações GoF–IA são hipóteses didáticas de projeto, não classificações oficiais da Microsoft nem evidência experimental de aprendizagem.</p></div><div class="evo-mini"><b>Estrutura</b><span>Quem se conecta a quem?</span><b>Comportamento</b><span>Quem executa e quem decide?</span><b>Validação</b><span>Como comprovar o resultado?</span></div></div>
+        <div id="padroes" class="pattern-lab">
+          <div class="evo-blockhead"><h3>02 / Laboratório de padrões GoF</h3><span id="pat-progress" class="evo-micro" aria-live="polite">0 / 10 desafios resolvidos</span></div>
+          <p>Explore dez dos 23 padrões do Gang of Four selecionados pela proximidade com os problemas arquiteturais da AI-103. Compare a estrutura UML com um cenário moderno, avance pelas etapas e resolva o checkpoint.</p>
+          <div class="pat-filter"><div><label for="pat-category">Categoria</label><select id="pat-category"><option value="all">Todas</option><option>Criacional</option><option>Estrutural</option><option>Comportamental</option></select></div><div><label for="pat-search">Pesquisar padrões e tecnologias</label><input id="pat-search" type="search" placeholder="Ex.: Mediator, MCP, Voice Live" autocomplete="off"></div></div>
+          <div id="pat-list" class="pat-list" role="group" aria-label="Seleção de padrão"></div>
+          <div id="pat-detail"></div>
+        </div>
+        <div class="evo-blockhead"><h3>03 / Referências e limites</h3><span class="evo-micro">BIBLIOGRAFIA DO MÓDULO</span></div>
+        <div class="evo-refs">
+          <a href="https://www.tnmoc.org/bombe" target="_blank" rel="noopener noreferrer"><b>The National Museum of Computing</b><span>Turing–Welchman Bombe</span></a>
+          <a href="https://www.tnmoc.org/colossus" target="_blank" rel="noopener noreferrer"><b>The National Museum of Computing</b><span>Colossus</span></a>
+          <a href="https://www.npl.co.uk/getattachment/2030c433-7d89-4db1-95ca-2dbcfdca0f4d/11408-History-of-NPL-May-2023.pdf?lang=en-GB" target="_blank" rel="noopener noreferrer"><b>National Physical Laboratory</b><span>História do NPL e Pilot ACE</span></a>
+          <a href="https://doi.org/10.1093/mind/LIX.236.433" target="_blank" rel="noopener noreferrer"><b>Alan M. Turing (1950)</b><span>Computing Machinery and Intelligence</span></a>
+          <a href="https://www.informit.com/store/design-patterns-elements-of-reusable-object-oriented-9780201633610" target="_blank" rel="noopener noreferrer"><b>Gamma, Helm, Johnson e Vlissides (1994)</b><span>Design Patterns — catálogo de 23 padrões</span></a>
+          <a href="https://doi.org/10.1207/s15516709cog0702_3" target="_blank" rel="noopener noreferrer"><b>Dedre Gentner (1983)</b><span>Structure-Mapping</span></a>
+          <a href="https://www.nasa.gov/reference/2-0-fundamentals-of-systems-engineering/" target="_blank" rel="noopener noreferrer"><b>NASA Systems Engineering Handbook</b><span>Fundamentos de engenharia de sistemas</span></a>
+          <a href="https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns/" target="_blank" rel="noopener noreferrer"><b>Microsoft Azure Architecture Center</b><span>AI Agent Orchestration Patterns</span></a>
+          <a href="https://learn.microsoft.com/en-us/agent-framework/workflows/orchestrations/" target="_blank" rel="noopener noreferrer"><b>Microsoft Agent Framework</b><span>Workflow orchestrations</span></a>
+        </div>
+        <details class="evo-original"><summary>Ver o esquema original que inspirou a v3.0</summary><div id="evo-original-svg"><svg font-family="-apple-system-body, ui-sans-serif, -apple-system, system-ui, &quot;Segoe UI&quot;, Helvetica, &quot;Apple Color Emoji&quot;, Arial, sans-serif, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;" font-weight="400"  fill="currentColor" style="color:#0c2131" viewBox="0 0 340 390" width="100%" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="8" width="280" height="60" rx="7" fill="#64748b" fill-opacity=".07" stroke="#8195a0"/><text x="170" y="31" font-weight="bold" font-size="12" text-anchor="middle" fill="currentColor">ENGENHARIA MECÂNICA</text><text x="170" y="50" font-size="10" text-anchor="middle" fill="currentColor">Componentes e fluxos físicos</text><path d="M170 68 v14 m-5 -5 l5 5 l5 -5" stroke="#0d9488" stroke-width="1.8" fill="none"/><rect x="30" y="86" width="280" height="60" rx="7" fill="#64748b" fill-opacity=".07" stroke="#8195a0"/><text x="170" y="109" font-weight="bold" font-size="12" text-anchor="middle" fill="currentColor">ALAN TURING</text><text x="170" y="128" font-size="10" text-anchor="middle" fill="currentColor">Lógica e computação</text><path d="M170 146 v14 m-5 -5 l5 5 l5 -5" stroke="#0d9488" stroke-width="1.8" fill="none"/><rect x="30" y="164" width="280" height="60" rx="7" fill="#64748b" fill-opacity=".07" stroke="#8195a0"/><text x="170" y="187" font-weight="bold" font-size="12" text-anchor="middle" fill="currentColor">GANG OF FOUR</text><text x="170" y="206" font-size="10" text-anchor="middle" fill="currentColor">Padrões reutilizáveis de software</text><path d="M170 224 v14 m-5 -5 l5 5 l5 -5" stroke="#0d9488" stroke-width="1.8" fill="none"/><rect x="30" y="242" width="280" height="60" rx="7" fill="#64748b" fill-opacity=".07" stroke="#8195a0"/><text x="170" y="265" font-weight="bold" font-size="12" text-anchor="middle" fill="currentColor">SISTEMAS DISTRIBUÍDOS</text><text x="170" y="284" font-size="10" text-anchor="middle" fill="currentColor">Serviços, eventos e orquestração</text><path d="M170 302 v14 m-5 -5 l5 5 l5 -5" stroke="#0d9488" stroke-width="1.8" fill="none"/><rect x="30" y="320" width="280" height="60" rx="7" fill="#0d9488" fill-opacity=".17" stroke="#0d9488"/><text x="170" y="343" font-weight="bold" font-size="12" text-anchor="middle" fill="currentColor">AGENTIC AI</text><text x="170" y="362" font-size="10" text-anchor="middle" fill="currentColor">Modelos, ferramentas e agentes</text></svg></div><p>O desenho foi fornecido como referência conceitual; as estações acima acrescentam contexto histórico.</p></details>
+      </section>
+
       <section class="glossary-section" id="glossario">
-        <div class="section-label"><span>08</span> FICHA DE OFICINA</div>
+        <div class="section-label"><span>09</span> FICHA DE OFICINA</div>
         <div class="glossary-header"><h2>17 guias. <em>Uma visão conectada.</em></h2><p>Use a busca para localizar termos e conceitos nos guias. A pesquisa é local, sem enviar dados a nenhum servidor.</p></div>
         <div class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input id="guide-search" type="search" autocomplete="off" placeholder="Buscar: MCP, RAG, OCR, Voice Live, RRF..." aria-label="Buscar nos 17 guias"/><span id="search-count" aria-live="polite">17 guias</span></div>
         <div id="all-guides" class="guide-directory"></div>

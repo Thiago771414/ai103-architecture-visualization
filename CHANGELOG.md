@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.0.0 — From Mechanical Logic to Agentic Intelligence
+
+- Módulo histórico com oito estações e cinco camadas conceituais.
+- Dez padrões GoF, UML e arquitetura de IA, com execução sincronizada.
+- Busca, filtro, checkpoints com correção e persistência local independente.
+- Exportação SVG e referências históricas, científicas e técnicas.
+- Preservação integral dos dados e lógica da bancada v2 e dos 17 guias.
+- Analogias explicitamente qualificadas como didáticas.
+
 ## 2.0.0 — Bancada de Arquitetura
 
 - Três casos práticos: contratos, sinistros e sistemas ferroviários.

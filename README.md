@@ -1,8 +1,25 @@
 # Atlas AI-103 — Engenharia de Sistemas Inteligentes
 
-Site estático e interativo para estudar os **cinco domínios e 17 guias da Microsoft AI-103**, combinando desenhos técnicos de locomotivas, arquitetura de software e **simulações de projeto de agentes**. Esta é a **versão 2.0**; mantém os recursos da v1 e adiciona a Bancada de Arquitetura.
+Site estático e interativo para estudar os **cinco domínios e 17 guias da Microsoft AI-103**, combinando desenhos técnicos de locomotivas, arquitetura de software e **simulações de projeto de agentes**. Esta é a **versão 3.0 — From Mechanical Logic to Agentic Intelligence**; mantém os recursos da v1 e v2 e acrescenta história da computação e laboratório GoF.
 
-## Novidade na versão 2.0 — Bancada de Arquitetura
+## Novidade na versão 3.0 — Evolução & GoF
+
+Acesse `#evolucao` para percorrer **oito estações conceituais/históricas**, da mecânica à IA agêntica, incluindo Bombe, Colossus, Pilot ACE, o jogo da imitação de Turing, Gang of Four e sistemas distribuídos. A planta de cinco camadas preserva o esquema fornecido como inspiração. Não se trata de cronologia exaustiva nem genealogia direta.
+
+Em `#padroes`, explore **10 dos 23 padrões clássicos**: Builder, Adapter, Facade, Proxy, Strategy, Mediator, Chain of Responsibility, Command, Observer e Template Method. Cada ficha traz UML de classes simplificado, arquitetura de IA análoga, etapas com destaque sincronizado, critérios de uso e de não uso, limites da analogia e um desafio com correção explicada. Há filtro por categoria, busca textual, exportação SVG dos dois diagramas e progresso independente salvo no navegador.
+
+A relação GoF–IA é uma interpretação didática, não uma equivalência oficial dos produtos Microsoft. A bibliografia do módulo reúne fontes do National Museum of Computing, Turing, GoF, Gentner, NASA e Microsoft Learn. A simulação não executa agentes ou serviços reais.
+
+### Arquivos novos
+
+- `assets/patterns-data.js`: dez fichas de padrões, diagramas, etapas e checkpoints.
+- `assets/patterns.js`: estações históricas, renderização dos diagramas, navegação e avaliação.
+- `assets/patterns.css`: estilos responsivos do módulo.
+- `assets/abstraction-original.svg`: referência conceitual fornecida, também incorporada à página.
+
+Chaves de armazenamento das versões anteriores foram mantidas; o novo progresso usa `atlas-ai103-patterns-v3`. Não apague `.git` nem o armazenamento do navegador ao atualizar.
+
+## Bancada de Arquitetura da versão 2.0
 
 No endereço `#simulador`, escolha uma de **3 situações fictícias**:
 
@@ -77,7 +94,7 @@ git push -u origin main
 
 ## Alternativa: um único arquivo HTML
 
-Também foi entregue, separadamente, `atlas-ai103-arquivo-unico.html`. Ele incorpora todo o CSS, todos os dados e toda a lógica JavaScript. Você pode abri-lo diretamente no navegador ou renomeá-lo para `index.html` e publicá-lo **sozinho**, na raiz do repositório. É a opção mais simples para experimentar rapidamente e não exige a pasta `assets/`.
+Também foi entregue, separadamente, `atlas-ai103-v3-arquivo-unico.html`. Ele incorpora todo o CSS, todos os dados e toda a lógica JavaScript. Você pode abri-lo diretamente no navegador ou renomeá-lo para `index.html` e publicá-lo **sozinho**, na raiz do repositório. É a opção mais simples para experimentar rapidamente e não exige a pasta `assets/`.
 
 ## Como abrir localmente
 
@@ -116,20 +133,22 @@ Você pode copiar, editar e publicar o site em seu repositório. Mantenha os avi
 
 O nome do repositório não precisa mudar: `ai103-architecture-visualization`.
 
-1. Extraia `atlas-ai103-v2-github-pages.zip` numa **nova pasta temporária**.
+1. Extraia `atlas-ai103-v3-github-pages.zip` numa **nova pasta temporária**.
 2. Copie o **conteúdo** dessa pasta (incluindo `assets/`, `index.html`, `README.md` e `.nojekyll`) por cima dos arquivos da pasta local que você já usa com Git, como `Downloads\atlas-ai103-github-pages`. **Não remova a pasta `.git`** do repositório local.
 3. Abra o PowerShell **na pasta Git já existente** e execute:
 
 ```powershell
 git status
 git add -A
-git commit -m "feat: add interactive AI-103 agent architecture simulator v2"
+git commit -m "feat: add history and GoF pattern laboratory v3"
 git push origin main
 ```
 
-4. Depois do deploy do GitHub Pages, abra `https://thiago771414.github.io/ai103-architecture-visualization/#simulador`. O mesmo link principal e os diagramas da v1 continuarão funcionando.
+4. Depois do deploy do GitHub Pages, abra `https://thiago771414.github.io/ai103-architecture-visualization/#simulador`. O mesmo link principal e os diagramas da v1 continuarão funcionando. O novo módulo fica em `#evolucao` e o laboratório em `#padroes`.
 
 ## Evolução
 
 - **v1.0**: cinco plantas, cinco circuitos, 17 guias e sistema integrado.
 - **v2.0**: três casos práticos, decisões de arquitetura, diagrama dinâmico, execução e laudo comparativo.
+
+- **v3.0**: oito estações, dez padrões, vinte diagramas comparativos, desafios e fontes históricas e técnicas.
